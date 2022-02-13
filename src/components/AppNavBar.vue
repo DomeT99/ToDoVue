@@ -1,5 +1,11 @@
 <template>
-  <v-navigation-drawer class="orange roboto" permanent v-model="drawer" :mini-variant.sync="mini" app>
+  <v-navigation-drawer
+    class="orange roboto"
+    permanent
+    v-model="drawer"
+    :mini-variant.sync="mini"
+    app
+  >
     <v-list-item class="px-2">
       <v-list-item-avatar>
         <v-icon>mdi-face-man</v-icon>
@@ -19,7 +25,9 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <router-link :to="item.path">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </router-link>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -32,9 +40,9 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "List to do", icon: "mdi-format-list-checks" },
-        { title: "List to buy", icon: "mdi-basket-plus" },
-        { title: "About", icon: "mdi-information-variant" },
+        { title: "List to do", icon: "mdi-format-list-checks", path: "/" },
+        { title: "List to buy", icon: "mdi-basket-plus", path: "/tobuy" },
+        { title: "About", icon: "mdi-information-variant", path: "/about" },
       ],
       mini: true,
     };
