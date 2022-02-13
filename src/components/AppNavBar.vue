@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    class="orange roboto"
+    class="amber roboto"
     permanent
     v-model="drawer"
     :mini-variant.sync="mini"
