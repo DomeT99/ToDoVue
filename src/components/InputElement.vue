@@ -6,7 +6,6 @@
       solo
       v-model="itemInsert"
       append-icon="mdi-lead-pencil"
-     
       clearable
       clear-icon="mdi-close-circle-outline"
     >
@@ -21,7 +20,7 @@ export default {
       itemInsert: "",
     };
   },
- /*  methods: {
+  /*  methods: {
     writeItem() {
       //let item = this.itemInsert;
  
