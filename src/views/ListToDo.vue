@@ -1,11 +1,10 @@
 <template>
   <v-container>
     <banner :iconList="icona">Cosa farai oggi?</banner>
-    <input-element></input-element>
-    <card></card>
+    <input-element @WriteItem="todos.push($event)"></input-element>
+    <card :items="todos"></card>
   </v-container>
 </template>
-
 <script>
 import Banner from "../components/Banner.vue";
 import InputElement from "../components/InputElement.vue";
@@ -15,8 +14,17 @@ export default {
   data() {
     return {
       icona: "mdi-checkbox-marked-circle-outline",
-      
+      todos: JSON.parse(localStorage.getItem("itemToDo")) || [],
     };
+  },
+  methods: {},
+  watch: {
+    todos: {
+      deep: true,
+      handler(newValue) {
+        localStorage.setItem("itemToDo", JSON.stringify(newValue));
+      },
+    },
   },
   components: {
     Banner,
