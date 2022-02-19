@@ -1,7 +1,7 @@
 <!--Componente card univoco-->
 <template>
   <v-container>
-    <div style="padding-bottom: 15px" :key="item" v-for="item in items">
+    <div class="scale-animation" style="padding-bottom: 15px" :key="item" v-for="item in items">
       <v-banner
         height="65"
         elevation="5"

@@ -3,15 +3,29 @@
 .roboto {
     font-family: "Roboto", sans-serif !important;
 }
-.f-size-17{
+.f-size-17 {
     font-size: 17px;
 }
 //Link
-a{
+a {
     color: currentColor !important;
     text-decoration: none;
 }
 //Margin
-.m-top-20{
+.m-top-20 {
     margin-top: 20px;
+}
+
+//Keyframes
+.scale-animation {
+    animation-name: scale;
+    animation-duration: 0.4s;
+}
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
