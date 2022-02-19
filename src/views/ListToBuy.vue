@@ -1,7 +1,14 @@
 <template>
   <v-container>
     <banner :iconList="icona">Cosa comprerai oggi?</banner>
-    <input-element @WriteItem="buys.push($event)"></input-element>
+    <pop-up-alert
+      @CloseAlert="showPopup = $event"
+      :dialog="showPopup"
+    ></pop-up-alert>
+    <input-element
+      @ShowAlert="showPopup = $event"
+      @WriteItem="buys.push($event)"
+    ></input-element>
     <card :deleteItem="deleteItem" :items="buys"></card>
   </v-container>
 </template>
@@ -10,12 +17,14 @@
 import Banner from "../components/Banner.vue";
 import InputElement from "../components/InputElement.vue";
 import Card from "../components/ItemInsert.vue";
+import PopUpAlert from "../components/PopUpAlert.vue";
 export default {
   name: "ToBuy",
   data() {
     return {
       icona: "mdi-cart",
       buys: JSON.parse(localStorage.getItem("itemToBuy")) || [],
+      showPopup: false,
     };
   },
   methods: {
@@ -28,6 +37,7 @@ export default {
     Banner,
     InputElement,
     Card,
+    PopUpAlert,
   },
   watch: {
     buys: {

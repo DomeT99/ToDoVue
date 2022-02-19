@@ -1,7 +1,14 @@
 <template>
   <v-container>
     <banner :iconList="icona">Cosa farai oggi?</banner>
-    <input-element @WriteItem="todos.push($event)"></input-element>
+    <pop-up-alert
+      @CloseAlert="showPopup = $event"
+      :dialog="showPopup"
+    ></pop-up-alert>
+    <input-element
+      @ShowAlert="showPopup = $event"
+      @WriteItem="todos.push($event)"
+    ></input-element>
     <card :deleteItem="deleteItem" :items="todos"></card>
   </v-container>
 </template>
@@ -9,17 +16,19 @@
 import Banner from "../components/Banner.vue";
 import InputElement from "../components/InputElement.vue";
 import Card from "../components/ItemInsert.vue";
+import PopUpAlert from "../components/PopUpAlert.vue";
 export default {
   name: "ToDo",
   data() {
     return {
       icona: "mdi-checkbox-marked-circle-outline",
       todos: JSON.parse(localStorage.getItem("itemToDo")) || [],
+      showPopup: false,
     };
   },
   methods: {
     deleteItem(id) {
-      const itemIndex = this.todos.findIndex(item => item.id === id);
+      const itemIndex = this.todos.findIndex((item) => item.id === id);
       this.todos.splice(itemIndex, 1);
     },
   },
@@ -35,6 +44,7 @@ export default {
     Banner,
     InputElement,
     Card,
+    PopUpAlert,
   },
 };
 </script>

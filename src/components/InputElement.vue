@@ -20,13 +20,19 @@ export default {
   data() {
     return {
       label: "",
+      show: false,
     };
   },
   methods: {
     writeItem() {
-      let todoObj = { id: _.uniqueId("item_"), label: this.label };
-      this.$emit("WriteItem", todoObj);
-      this.label =""
+      if (this.label == "") {
+        this.show = true;
+        this.$emit("ShowAlert", this.show);
+      } else {
+        let todoObj = { id: _.uniqueId("item_"), label: this.label };
+        this.$emit("WriteItem", todoObj);
+        this.label = "";
+      }
     },
   },
 };
