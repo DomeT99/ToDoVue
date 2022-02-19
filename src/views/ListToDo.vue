@@ -2,7 +2,7 @@
   <v-container>
     <banner :iconList="icona">Cosa farai oggi?</banner>
     <input-element @WriteItem="todos.push($event)"></input-element>
-    <card :items="todos"></card>
+    <card :deleteItem="deleteItem" :items="todos"></card>
   </v-container>
 </template>
 <script>
@@ -17,7 +17,12 @@ export default {
       todos: JSON.parse(localStorage.getItem("itemToDo")) || [],
     };
   },
-  methods: {},
+  methods: {
+    deleteItem(id) {
+      const itemIndex = this.todos.findIndex(item => item.id === id);
+      this.todos.splice(itemIndex, 1);
+    },
+  },
   watch: {
     todos: {
       deep: true,

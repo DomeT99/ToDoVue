@@ -3,15 +3,16 @@
   <v-container>
     <div style="padding-bottom: 15px" :key="item" v-for="item in items">
       <v-banner
-        height="60"
+        height="65"
         elevation="5"
         color="amber lighten-5 text-center"
         shaped
         icon="mdi-close-circle-outline"
         icon-color="amber"
-        @click:icon="test"
+        :id="item.id"
+        @click:icon="deleteItem(item.id)"
       >
-        {{ item.label }}
+        <p>{{ item.label }}</p>
       </v-banner>
     </div>
   </v-container>
@@ -26,11 +27,6 @@ export default {
       label: String,
     },
     deleteItem: Function,
-  },
-  methods: {
-    test() {
-      alert("TES");
-    },
   },
 };
 </script>

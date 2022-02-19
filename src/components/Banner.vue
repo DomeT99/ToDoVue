@@ -1,5 +1,6 @@
 <template>
   <v-banner
+    sticky
     class="amber lighten-5 text-center f-size-17 text-uppercase"
     elevation="4"
     :icon="iconList"
@@ -12,7 +13,7 @@
 export default {
   props: {
     textBanner: String,
-    iconList: String
+    iconList: String,
   },
 };
 </script>

@@ -4,6 +4,7 @@
     permanent
     v-model="drawer"
     :mini-variant.sync="mini"
+    fixed
     app
   >
     <v-list-item class="px-2">
