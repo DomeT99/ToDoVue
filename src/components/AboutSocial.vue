@@ -6,10 +6,10 @@
           :href="icon.link"
           v-for="icon in icons"
           :key="icon"
-          class="mx-4 text--black"
+          class="mx-3 text--black"
           icon
         >
-          <v-icon size="24px">
+          <v-icon size="22px">
             {{ icon.icona }}
           </v-icon>
         </v-btn>
@@ -28,7 +28,12 @@
       <v-divider></v-divider>
 
       <v-card-text class="text--black">
-        {{ new Date().getFullYear() }} — <strong>Domenico Tenace</strong>
+        {{ new Date().getFullYear() }} —
+        <strong
+          style="cursor: pointer; text-decoration: underline"
+          @click="openPortfolio"
+          >Domenico Tenace</strong
+        >
       </v-card-text>
     </v-card>
   </v-footer>
@@ -40,7 +45,11 @@ export default {
     icons: [
       {
         icona: "mdi-facebook",
-        link: "https://www.facebook.com/domenico.tenace",
+        link: "https://www.facebook.com/domenico.tenace/",
+      },
+      {
+        icona: "mdi-github",
+        link: "https://github.com/DomeT99",
       },
       { icona: "mdi-twitter", link: "https://twitter.com/dome_tena99" },
       {
@@ -50,5 +59,10 @@ export default {
       { icona: "mdi-instagram", link: "https://www.instagram.com/dome_t99/" },
     ],
   }),
+  methods: {
+    openPortfolio() {
+      window.open("https://domet99.github.io/");
+    },
+  },
 };
 </script>
