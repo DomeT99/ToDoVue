@@ -1,24 +1,7 @@
-# cosedafare
+# ToDoList
 
-## Project setup
-```
-npm install
-```
+Semplice PWA lista di cose da fare realizzata con Vue.js e Vuetify✌️
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Vuetify: https://vuetifyjs.com/en/
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Vue.js: https://vuejs.org/
