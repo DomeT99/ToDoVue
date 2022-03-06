@@ -1,32 +1,33 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import ToDo from '../views/ListToDo.vue'
-import ToBuy from '../views/ListToBuy.vue'
-import About from '../views/About.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'ToDo',
-    component: ToDo
+    path: "/",
+    name: "ToDo",
+    component: () => import("../views/ListToDo.vue"),
   },
   {
-    path: '/tobuy',
-    name: 'ToBuy',
-    component: ToBuy
+    path: "/tobuy",
+    name: "ToBuy",
+    component: () => import("../views/ListToBuy.vue"),
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
-  }
- 
-]
+    path: "/about",
+    name: "About",
+    component: () => import("../views/About.vue"),
+  },
+  {
+    path: "/notes",
+    name: "Notes",
+    component: () => import("../views/Notes.vue"),
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
