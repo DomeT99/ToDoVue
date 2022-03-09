@@ -21,9 +21,11 @@ export default {
   props: {
     dialog: {
       type: Boolean,
+      required: true,
     },
     bodyText: {
       type: String,
+      required: true,
     },
   },
   data() {

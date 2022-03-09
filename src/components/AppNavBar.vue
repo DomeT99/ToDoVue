@@ -3,7 +3,7 @@
     <v-app-bar elevation="5" color="amber " app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>ToDoList</v-toolbar-title>
+      <v-toolbar-title>Let's do it!</v-toolbar-title>
 
       <v-spacer></v-spacer>
       <v-icon>mdi-lead-pencil</v-icon>
