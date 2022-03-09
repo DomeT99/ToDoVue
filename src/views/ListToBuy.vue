@@ -1,5 +1,6 @@
 <template>
   <v-container>
+     <!-- SEZIONE COSE DA FARE -->
     <banner :iconList="icona">Cosa comprerai oggi?</banner>
     <pop-up-alert @CloseAlert="showPopup = $event" :dialog="showPopup"
       >Non è stato inserito nulla da comprare</pop-up-alert
