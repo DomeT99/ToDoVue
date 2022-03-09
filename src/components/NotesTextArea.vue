@@ -12,8 +12,11 @@
       </v-col>
     </v-row>
     <v-row align-content-sm="center">
-      <v-col class="d-flex justify-center" cols="12">
-        <ButtonSave></ButtonSave>
+      <v-col class="d-flex justify-center" cols="6">
+        <ButtonSave :saveElement="onSave">Salva</ButtonSave>
+      </v-col>
+      <v-col class="d-flex justify-center" cols="6">
+        <ButtonSave :saveElement="onDelete">Cancella</ButtonSave>
       </v-col>
     </v-row>
   </v-main>
@@ -22,10 +25,27 @@
 <script>
 import ButtonSave from "../components/NotesButtonSave.vue";
 export default {
+  props: {
+    notes: String,
+  },
   data() {
     return {
-      notes: "",
+      show: true,
     };
+  },
+  methods: {
+    onSave() {
+      if (this.notes == "") {
+        this.show = true;
+        this.$emit("ShowAlert", this.show);
+      } else {
+        localStorage.setItem("Notes", this.notes);
+      }
+    },
+    onDelete() {
+      this.notes = "";
+      localStorage.clear("Notes");
+    },
   },
   components: {
     ButtonSave,

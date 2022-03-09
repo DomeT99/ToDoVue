@@ -1,7 +1,12 @@
 <template>
-  <v-btn color="amber">Salva</v-btn>
+  <v-btn @click="saveElement" color="amber"><slot>{{label}}</slot></v-btn>
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    saveElement:Function,
+    label:String
+  }
+};
 </script>
