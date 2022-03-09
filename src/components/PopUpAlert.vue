@@ -2,8 +2,10 @@
   <v-container>
     <v-dialog v-model="dialog" width="500">
       <v-card>
-        <v-card-title class="text-h5"> Attenzione </v-card-title>
-        <v-card-text>Non è stato inserito alcun elemento</v-card-text>
+        <v-card-title class="text-h5">Attenzione </v-card-title>
+        <v-card-text
+          ><slot>{{ bodyText }}</slot></v-card-text
+        >
         <v-card-actions>
           <v-spacer></v-spacer>
 
@@ -19,6 +21,9 @@ export default {
   props: {
     dialog: {
       type: Boolean,
+    },
+    bodyText: {
+      type: String,
     },
   },
   data() {

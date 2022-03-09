@@ -4,7 +4,7 @@
     <pop-up-alert
       @CloseAlert="showPopup = $event"
       :dialog="showPopup"
-    ></pop-up-alert>
+    >Non è stato inserito alcun impegno</pop-up-alert>
     <input-element
       @ShowAlert="showPopup = $event"
       @WriteItem="todos.push($event)"

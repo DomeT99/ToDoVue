@@ -1,11 +1,10 @@
 <template>
   <v-container>
     <banner>Prendi nota</banner>
-    <pop-up-alert
-      @CloseAlert="showPopup = $event"
-      :dialog="showPopup"
-    ></pop-up-alert>
-    <text-area @ShowAlert="showPopup = $event" :notes="notesViews"></text-area>
+    <pop-up-alert @CloseAlert="showPopup = $event" :dialog="showPopup">
+      La sezione note è vuota</pop-up-alert
+    >
+    <text-area @ShowAlert="showPopup = $event" :notes="notesViews"> </text-area>
   </v-container>
 </template>
 

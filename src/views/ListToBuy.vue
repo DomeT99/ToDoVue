@@ -1,10 +1,9 @@
 <template>
   <v-container>
     <banner :iconList="icona">Cosa comprerai oggi?</banner>
-    <pop-up-alert
-      @CloseAlert="showPopup = $event"
-      :dialog="showPopup"
-    ></pop-up-alert>
+    <pop-up-alert @CloseAlert="showPopup = $event" :dialog="showPopup"
+      >Non è stato inserito nulla da comprare</pop-up-alert
+    >
     <input-element
       @ShowAlert="showPopup = $event"
       @WriteItem="buys.push($event)"
