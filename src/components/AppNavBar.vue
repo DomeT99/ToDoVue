@@ -3,7 +3,7 @@
     <v-app-bar elevation="5" color="amber " app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>ToDoList</v-toolbar-title>
+      <v-toolbar-title>Let's do it!</v-toolbar-title>
 
       <v-spacer></v-spacer>
       <v-icon>mdi-lead-pencil</v-icon>
@@ -51,6 +51,7 @@ export default {
       items: [
         { title: "List to do", icon: "mdi-format-list-checks", path: "/" },
         { title: "List to buy", icon: "mdi-basket-plus", path: "/tobuy" },
+        { title: "Notes", icon: "mdi-text-box", path: "/notes" },
         { title: "About", icon: "mdi-information-variant", path: "/about" },
       ],
     };
