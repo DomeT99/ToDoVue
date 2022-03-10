@@ -15,6 +15,7 @@
     </section>
     <section v-else>
       <text-area
+        @showLoad="onShowLoad"
         @OpenPop="showChoose = $event"
         @ShowAlert="showPopup = $event"
         :notes="notesViews"
@@ -30,6 +31,8 @@ import TextArea from "../components/NotesTextArea.vue";
 import PopUpAlert from "../components/PopUpAlert.vue";
 import LoadingCircle from "../components/LoadingCircle.vue";
 import PopUpChoose from "../components/PopUpChoose.vue";
+import Vue from "vue";
+
 export default {
   components: {
     Banner,
@@ -49,6 +52,7 @@ export default {
       showPopup: false,
       showLoading: true,
       showChoose: false,
+      openSnack: false,
     };
   },
   methods: {
@@ -56,6 +60,15 @@ export default {
       this.showChoose = false;
       localStorage.clear("Notes");
       this.notesViews = "";
+    },
+    onShowLoad(val) {
+      this.showLoading = val;
+      setTimeout(() => {
+        this.showLoading = false;
+      }, 500);
+      Vue.nextTick(() => {
+        this.notesViews = localStorage.getItem("Notes");
+      });
     },
   },
 };

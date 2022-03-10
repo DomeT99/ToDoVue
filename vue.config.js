@@ -4,6 +4,9 @@ module.exports = {
   ],
   pwa: {
     name: 'Let\'s do it!',
-    themeColor: '#FFC107'
+    themeColor: '#FFC107',
+    manifestOptions: {
+      background_color: '#FFC107'
+    }
   }
 }

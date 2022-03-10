@@ -40,6 +40,7 @@ export default {
         this.show = true;
         this.$emit("ShowAlert", this.show);
       } else {
+        this.$emit("showLoad", "true");
         localStorage.setItem("Notes", this.notes);
       }
     },
