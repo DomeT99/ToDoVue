@@ -3,7 +3,11 @@
   <v-container>
     <div
       class="scale-animation"
+<<<<<<< HEAD
+      style="margin-bottom: 15px"
+=======
       style="padding-bottom: 15px"
+>>>>>>> df71b6b592e0a151575bd2d0a6415d2ae89332ed
       :key="item"
       v-for="item in items"
     >
