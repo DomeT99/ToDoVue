@@ -4,11 +4,21 @@
     <pop-up-alert @CloseAlert="showPopup = $event" :dialog="showPopup">
       La sezione note è vuota</pop-up-alert
     >
+    <pop-up-choose
+      :trueFunc="onDelete"
+      @CloseChoose="showChoose = $event"
+      :dialog="showChoose"
+      >Sei sicuro di voler eliminare gli appunti?</pop-up-choose
+    >
     <section v-if="showLoading">
       <loading-circle></loading-circle>
     </section>
     <section v-else>
-      <text-area @ShowAlert="showPopup = $event" :notes="notesViews">
+      <text-area
+        @OpenPop="showChoose = $event"
+        @ShowAlert="showPopup = $event"
+        :notes="notesViews"
+      >
       </text-area>
     </section>
   </v-container>
@@ -19,24 +29,34 @@ import Banner from "../components/Banner.vue";
 import TextArea from "../components/NotesTextArea.vue";
 import PopUpAlert from "../components/PopUpAlert.vue";
 import LoadingCircle from "../components/LoadingCircle.vue";
+import PopUpChoose from "../components/PopUpChoose.vue";
 export default {
   components: {
     Banner,
     TextArea,
     PopUpAlert,
     LoadingCircle,
+    PopUpChoose,
   },
   mounted() {
     setTimeout(() => {
       this.showLoading = false;
-    },500);
+    }, 500);
   },
   data() {
     return {
       notesViews: localStorage.getItem("Notes") || "",
       showPopup: false,
       showLoading: true,
+      showChoose: false,
     };
+  },
+  methods: {
+    onDelete() {
+      this.showChoose = false;
+      localStorage.clear("Notes");
+      this.notesViews = "";
+    },
   },
 };
 </script>

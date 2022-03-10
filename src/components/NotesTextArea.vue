@@ -8,6 +8,7 @@
           no-resize
           height="250"
           v-model="notes"
+          clearable
         ></v-textarea>
       </v-col>
     </v-row>
@@ -16,7 +17,7 @@
         <ButtonSave :saveElement="onSave">Salva</ButtonSave>
       </v-col>
       <v-col class="d-flex justify-center" cols="6">
-        <ButtonSave :saveElement="onDelete">Cancella</ButtonSave>
+        <ButtonSave :saveElement="openPopUpChoose">Cancella</ButtonSave>
       </v-col>
     </v-row>
   </v-main>
@@ -42,9 +43,13 @@ export default {
         localStorage.setItem("Notes", this.notes);
       }
     },
-    onDelete() {
-      this.notes = "";
-      localStorage.clear("Notes");
+    openPopUpChoose() {
+      if (localStorage.length <= 0) {
+        this.show = true;
+        this.$emit("ShowAlert", this.show);
+      } else {
+        this.$emit("OpenPop", "true");
+      }
     },
   },
   components: {
