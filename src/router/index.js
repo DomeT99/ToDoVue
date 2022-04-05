@@ -24,6 +24,11 @@ const routes = [
     name: "Notes",
     component: () => import("../views/Notes.vue"),
   },
+  {
+    path: "/qrcode",
+    name: "QR Code",
+    component: () => import("../views/QrCode.vue"),
+  },
 ];
 
 const router = new VueRouter({
