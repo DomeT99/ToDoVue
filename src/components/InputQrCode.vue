@@ -33,9 +33,13 @@ export default {
     };
   },
   methods: {
-    generaQrcode(){
-      this.$emit("GeneraQr", this.label)
-    }
+    generaQrcode() {
+      if (this.label == "") {
+        this.$emit("ShowAlert", true);
+      } else {
+        this.$emit("GeneraQr", this.label);
+      }
+    },
   },
 };
 </script>
