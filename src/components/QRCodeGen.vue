@@ -2,17 +2,19 @@
   <v-main>
     <div class="flex-center">
       <v-card class="mx-auto" max-width="344">
-        <v-card-title>Il tuo QR Code</v-card-title>
-        <v-card-text>{{ qrcode }}</v-card-text>
+        <vue-qr :text="txtQrcode" :size="200"></vue-qr>
       </v-card>
     </div>
   </v-main>
 </template>
 
 <script>
+import VueQr from "vue-qr/src/packages/vue-qr.vue";
+
 export default {
   props: {
-    qrcode: Object,
+    txtQrcode: String,
   },
+  components: { VueQr },
 };
 </script>

@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <Banner>Genera un QR Code</Banner>
-    <InputQrCode></InputQrCode>
+    <InputQrCode @GeneraQr="txtQr = $event"></InputQrCode>
 
-    <QRCodeGen></QRCodeGen>
+    <QRCodeGen :txtQrcode="txtQr"></QRCodeGen>
   </v-container>
 </template>
 
@@ -17,6 +17,10 @@ export default {
     InputQrCode,
     QRCodeGen,
   },
-  methods: {},
+  data() {
+    return {
+      txtQr: "Ciao User!",
+    };
+  },
 };
 </script>

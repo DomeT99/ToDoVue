@@ -11,9 +11,9 @@
     "core-js": "^3.21.1",
     "express": "^4.17.3",
     "lodash": "^4.17.15",
-    "qrcode": "^1.5.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
+    "vue-qr": "^3.2.4",
     "vue-router": "^3.2.0",
     "vue2-touch-events": "^3.2.2",
     "vuetify": "^2.6.4"

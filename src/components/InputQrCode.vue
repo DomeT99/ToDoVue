@@ -30,9 +30,12 @@ export default {
   data() {
     return {
       label: "",
-      qrCode: {},
     };
   },
-  methods: {},
+  methods: {
+    generaQrcode(){
+      this.$emit("GeneraQr", this.label)
+    }
+  },
 };
 </script>
