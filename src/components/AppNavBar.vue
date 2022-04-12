@@ -52,6 +52,7 @@ export default {
         { title: "List to do", icon: "mdi-format-list-checks", path: "/" },
         { title: "List to buy", icon: "mdi-basket-plus", path: "/tobuy" },
         { title: "Notes", icon: "mdi-text-box", path: "/notes" },
+        { title: "QR Code", icon: "mdi-qrcode", path: "/qrcode" },
         { title: "About", icon: "mdi-information-variant", path: "/about" },
       ],
     };
