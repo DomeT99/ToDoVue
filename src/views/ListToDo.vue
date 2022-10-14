@@ -23,11 +23,11 @@
   </v-container>
 </template>
 <script>
-import Banner from "../components/Banner.vue";
-import InputElement from "../components/InputElement.vue";
-import Card from "../components/ItemInsert.vue";
-import LoadingCircle from "../components/LoadingCircle.vue";
-import PopUpAlert from "../components/PopUpAlert.vue";
+import Banner from "../components/common/Banner.vue";
+import InputElement from "../components/common/InputElement.vue";
+import Card from "../components/common/ItemInsert.vue";
+import LoadingCircle from "../components/common/LoadingCircle.vue";
+import PopUpAlert from "../components/common/PopUpAlert.vue";
 export default {
   name: "ToDo",
   mounted() {

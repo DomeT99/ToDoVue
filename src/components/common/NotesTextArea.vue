@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import ButtonSave from "../components/NotesButtonSave.vue";
+import ButtonSave from "./NotesButtonSave.vue";
 export default {
   props: {
     notes: String,

@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import Banner from "../components/Banner.vue";
-import InputQrCode from "../components/InputQrCode.vue";
-import QRCodeGen from "../components/QRCodeGen.vue";
-import LoadingCircle from "../components/LoadingCircle.vue";
-import PopUpAlert from "../components/PopUpAlert.vue";
-import ButtonSave from "../components/NotesButtonSave.vue";
+import Banner from "../components/common/Banner.vue";
+import InputQrCode from "../components/QrCodeV/InputQrCode.vue";
+import QRCodeGen from "../components/QrCodeV/QRCodeGen.vue";
+import LoadingCircle from "../components/common/LoadingCircle.vue";
+import PopUpAlert from "../components/common/PopUpAlert.vue";
+import ButtonSave from "../components/common/NotesButtonSave.vue";
 export default {
   components: {
     Banner,

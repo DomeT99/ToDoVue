@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AboutSocial from "../components/AboutSocial.vue";
+import AboutSocial from "../components/AboutV/AboutSocial.vue";
 export default {
   name: "About",
   data() {

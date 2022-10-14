@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import Banner from "../components/Banner.vue";
-import TextArea from "../components/NotesTextArea.vue";
-import PopUpAlert from "../components/PopUpAlert.vue";
-import LoadingCircle from "../components/LoadingCircle.vue";
-import PopUpChoose from "../components/PopUpChoose.vue";
+import Banner from "../components/common/Banner.vue";
+import TextArea from "../components/common/NotesTextArea.vue";
+import PopUpAlert from "../components/common/PopUpAlert.vue";
+import LoadingCircle from "../components/common/LoadingCircle.vue";
+import PopUpChoose from "../components/common/PopUpChoose.vue";
 import Vue from "vue";
 
 export default {
